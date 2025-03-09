@@ -1,0 +1,93 @@
+/* Aplicar fondo oscuro globalmente */
+body {
+  background-color: #141414 !important;
+  color: white !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Sidebar oscuro */
+.sidebar {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+/* Enlaces del Sidebar */
+.sidebar .nav-link {
+  color: #bdbdbd !important;
+  transition: color 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  color: white !important;
+  background-color: #007bff !important;
+}
+
+/* Dropdown oscuro */
+.dropdown-menu {
+  background-color: #1e1e1e !important;
+  color: white !important;
+}
+
+.dropdown-menu .dropdown-item {
+  color: white !important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #007bff !important;
+}
+
+/* Mantener el Sidebar fijo */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 15px;
+  overflow-y: auto;
+  /* Permitir scroll interno si el contenido es largo */
+}
+
+/* Asegurar que el contenido principal no se sobreponga */
+.main-content {
+  margin-left: 280px;
+  /* Ajustar según el ancho del sidebar */
+  padding: 20px;
+}
+
+/* Asegurar que todo está en modo oscuro */
+body {
+  background-color: #141414;
+  color: white;
+}
+
+/* Contenedor de cada gráfica */
+.chart-container {
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ajustar ApexCharts para que los labels sean blancos */
+.apexcharts-tooltip {
+  background: #1e1e1e !important;
+  color: white !important;
+  border: 1px solid #333 !important;
+}
+
+.apexcharts-xaxis-label,
+.apexcharts-yaxis-label {
+  fill: white !important;
+}
+
+.apexcharts-legend-text {
+  fill: white !important;
+}
+
+.apexcharts-title-text {
+  fill: white !important;
+}

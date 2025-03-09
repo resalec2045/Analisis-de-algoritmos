@@ -1,0 +1,51 @@
+{
+    "barras": {
+      "titulo": "Top 15 Autores Más Productivos",
+      "eje_x": "Autores",
+      "eje_y": "Cantidad de Publicaciones",
+      "datos": [
+        { "autor": "Autor 1", "publicaciones": 45 },
+        { "autor": "Autor 2", "publicaciones": 40 },
+        { "autor": "Autor 3", "publicaciones": 38 },
+        { "autor": "Autor 4", "publicaciones": 35 },
+        { "autor": "Autor 5", "publicaciones": 33 },
+        { "autor": "Autor 6", "publicaciones": 30 },
+        { "autor": "Autor 7", "publicaciones": 28 },
+        { "autor": "Autor 8", "publicaciones": 26 },
+        { "autor": "Autor 9", "publicaciones": 24 },
+        { "autor": "Autor 10", "publicaciones": 22 },
+        { "autor": "Autor 11", "publicaciones": 21 },
+        { "autor": "Autor 12", "publicaciones": 20 },
+        { "autor": "Autor 13", "publicaciones": 19 },
+        { "autor": "Autor 14", "publicaciones": 18 },
+        { "autor": "Autor 15", "publicaciones": 17 }
+      ]
+    },
+    "lineas": {
+      "titulo": "Tendencia de Publicaciones por Año",
+      "eje_x": "Año",
+      "eje_y": "Cantidad de Publicaciones",
+      "datos": [
+        { "año": 2015, "publicaciones": 50 },
+        { "año": 2016, "publicaciones": 65 },
+        { "año": 2017, "publicaciones": 80 },
+        { "año": 2018, "publicaciones": 95 },
+        { "año": 2019, "publicaciones": 110 },
+        { "año": 2020, "publicaciones": 125 },
+        { "año": 2021, "publicaciones": 140 },
+        { "año": 2022, "publicaciones": 155 },
+        { "año": 2023, "publicaciones": 170 },
+        { "año": 2024, "publicaciones": 185 }
+      ]
+    },
+    "pastel": {
+      "titulo": "Distribución de Tipos de Publicaciones",
+      "categorias": [
+        { "tipo": "Artículos", "porcentaje": 40 },
+        { "tipo": "Conferencias", "porcentaje": 25 },
+        { "tipo": "Capítulos de libro", "porcentaje": 20 },
+        { "tipo": "Libros", "porcentaje": 15 }
+      ]
+    }
+  }
+  
