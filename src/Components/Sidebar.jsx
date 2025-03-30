@@ -24,6 +24,12 @@ const Sidebar = () => {
             Dashboard
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/dashboardAbstract" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-speedometer2 me-2"></i>
+            Dashboard Abstract
+          </NavLink>
+        </li>
       </ul>
       <hr />
     </div>
