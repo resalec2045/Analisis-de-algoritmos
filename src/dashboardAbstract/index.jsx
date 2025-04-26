@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../Components/SideBar";
 import KeywordStatsTable from "./components/KeywordStatsTable";
 import BarChart from "../dashboard/components/BarChart";
+import Sidebar from "../Components/Sidebar";
 
 const DashboardAbstract = () => {
   // const [chartData, setChartData] = useState({ metodo: [], time: [] });

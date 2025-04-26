@@ -30,6 +30,12 @@ const Sidebar = () => {
             Dashboard Abstract
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/seguimiento" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-speedometer2 me-2"></i>
+            Seguimiento 2
+          </NavLink>
+        </li>
       </ul>
       <hr />
     </div>

@@ -1,0 +1,45 @@
+/* custom-tree.css */
+
+/* Estilos para el nodo raíz */
+.node__root>circle {
+  fill: #3062d9;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+/* Estilos para nodos intermedios (con hijos) */
+.node__branch>circle {
+  fill: #8040db;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+/* Estilos para nodos hoja (sin hijos) */
+.node__leaf>circle {
+  fill: #3a3a3a;
+  stroke: #ffffff;
+  stroke-width: 2px;
+}
+
+/* Estilos para los textos de los nodos */
+.node__root text,
+.node__branch text,
+.node__leaf text {
+  fill: #ffffff;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para enlaces hacia nodos intermedios */
+.link__to-branch {
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+  fill: none;
+}
+
+/* Estilos para enlaces hacia nodos hoja */
+.link__to-leaf {
+  stroke: #ffffff;
+  stroke-width: 1.5px;
+  fill: none;
+}

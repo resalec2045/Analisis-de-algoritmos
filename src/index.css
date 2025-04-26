@@ -1,6 +1,6 @@
 /* Aplicar fondo oscuro globalmente */
 body {
-  background-color: #141414 !important;
+  /* background-color: #1E1F20 !important; */
   color: white !important;
   transition: background-color 0.3s, color 0.3s;
 }
