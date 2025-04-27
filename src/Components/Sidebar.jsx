@@ -43,6 +43,12 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/Requerimiento3_1" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-speedometer2 me-2"></i>
+            Requerimiento 3 (Graficas)
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/requerimiento5" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
             <i className="bi bi-speedometer2 me-2"></i>
             Requerimiento 5

@@ -10,8 +10,8 @@ const WordCloudChart = ({ words }) => {
         const canvas = canvasRef.current;
 
         // 🛠️ Asegurar que el canvas tenga tamaño correcto
-        canvas.width = 600;
-        canvas.height = 400;
+        canvas.width = 1200;
+        canvas.height = 800;
 
         if (words && words.length > 0) {
             const formattedWords = words

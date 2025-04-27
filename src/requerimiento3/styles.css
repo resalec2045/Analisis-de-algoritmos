@@ -1,0 +1,32 @@
+/* styles.css */
+
+/* Contenedor de cada sección (WordCloud o Co-Word Network) */
+.page-section {
+    min-height: 100vh;
+    /* Ocupa toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* Centrado vertical */
+    align-items: center;
+    /* Centrado horizontal */
+    background-color: #141414;
+    /* Opcional: fondo oscuro si quieres unificar */
+}
+
+/* Estilo para los encabezados */
+.page-section h5 {
+    margin-bottom: 20px;
+    color: white;
+    /* Opcional: para que el título sea visible en fondo oscuro */
+    font-size: 1.8rem;
+}
+
+/* Contenedor del gráfico */
+.graph-container {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
