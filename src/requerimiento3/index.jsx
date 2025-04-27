@@ -22,30 +22,30 @@ import './styles.css';
 //     { text: "Logic11", value: 25 },
 // ];
 
-const data2 = {
-    nodes: [
-        { id: 1, label: "Programming" },
-        { id: 2, label: "Algorithm" },
-        { id: 3, label: "Debug" },
-        { id: 4, label: "Debug" },
-        { id: 5, label: "Debug" },
-    ],
-    edges: [
-        { from: 1, to: 2 },
-        { from: 1, to: 3 },
-        { from: 4, to: 3 },
-        { from: 3, to: 5 },
-    ],
-};
+// const data2 = {
+//     nodes: [
+//         { id: 1, label: "Programming" },
+//         { id: 2, label: "Algorithm" },
+//         { id: 3, label: "Debug" },
+//         { id: 4, label: "Debug" },
+//         { id: 5, label: "Debug" },
+//     ],
+//     edges: [
+//         { from: 1, to: 2 },
+//         { from: 1, to: 3 },
+//         { from: 4, to: 3 },
+//         { from: 3, to: 5 },
+//     ],
+// };
 
 const Requerimiento3 = () => {
 
     const [isLoading, setIsLoading] = useState(true);
+    const [isLoading2, setIsLoading2] = useState(true);
     const [data, setData] = useState();
+    const [data2, setData2] = useState();
 
     useEffect(() => {
-
-        setIsLoading(true);
 
         fetch("http://localhost:8080/api/requerimiento3", {
             method: "GET",
@@ -64,6 +64,28 @@ const Requerimiento3 = () => {
                 setData(data.respuesta);
 
                 setIsLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error obteniendo los datos:", error);
+            });
+
+        fetch("http://localhost:8080/api/requerimiento3_2", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+
+                setData2(data.respuesta);
+
+                setIsLoading2(false);
             })
             .catch((error) => {
                 console.error("Error obteniendo los datos:", error);
@@ -94,9 +116,17 @@ const Requerimiento3 = () => {
                 <div className="page-section">
                     <h5>Co-Word Network</h5>
 
-                    <div className="graph-container">
-                        <CoWordNetwork data={data2} />
-                    </div>
+                    {isLoading2 ? (
+                        <div className="text-center">
+                            <div className="spinner-border text-primary" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="">
+                            <CoWordNetwork data={data2} />
+                        </div>
+                    )}
                 </div>
 
             </div>
