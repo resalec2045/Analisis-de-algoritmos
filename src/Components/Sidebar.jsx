@@ -31,6 +31,24 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
+          <NavLink to="/requerimiento2" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-speedometer2 me-2"></i>
+            Requerimiento 2
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/requerimiento3" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-speedometer2 me-2"></i>
+            Requerimiento 3
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/requerimiento5" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+            <i className="bi bi-speedometer2 me-2"></i>
+            Requerimiento 5
+          </NavLink>
+        </li>
+        <li>
           <NavLink to="/seguimiento" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
             <i className="bi bi-speedometer2 me-2"></i>
             Seguimiento 2
