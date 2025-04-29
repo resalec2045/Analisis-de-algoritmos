@@ -66,10 +66,7 @@ const Requerimiento2 = () => {
                     )
                 }
 
-                <h1>Año de publicación por tipo de producto</h1>
-                <h1>Cuántos productos hay por tipo</h1>
-                <h1>15 journals con más productos</h1>
-
+                {/* <h1>Año de publicación por tipo de producto</h1> */}
             </div>
         </div>
     );

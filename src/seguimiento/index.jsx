@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Sidebar from '../Components/Sidebar';
 import Dendrogram from './components/Dendogram';
+import ComparacionClustering from "./components/Table";
 
 const Seguimiento = () => {
 
@@ -105,7 +106,7 @@ const Seguimiento = () => {
                         <p>{description}</p>
                     )}
 
-                    <h1 className="text-3xl font-bold mb-4">Dendograma Agnes</h1>
+                    <h1 className="text-3xl font-bold mb-4">Dendograma Agnes (Aglomerativo)</h1>
                     {isLoading ? (
                         <div className="text-center">
                             <div className="spinner-border text-primary" role="status">
@@ -117,7 +118,7 @@ const Seguimiento = () => {
                     )}
 
                     <hr className="my-4" />
-                    <h2 className="text-2xl font-bold mb-4">Dendrograma Diana</h2>
+                    <h2 className="text-2xl font-bold mb-4">Dendrograma Diana (Divisivo)</h2>
 
                     {isLoading2 ? (
                         <div className="text-center">
@@ -128,6 +129,9 @@ const Seguimiento = () => {
                     ) : (
                         <Dendrogram data={data2} />
                     )}
+                </div>
+                <div className="flex text-center align-items-center justify-center mt-4">
+                    <ComparacionClustering />
                 </div>
             </div>
         </div>
