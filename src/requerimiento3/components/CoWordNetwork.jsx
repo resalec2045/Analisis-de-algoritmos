@@ -53,7 +53,7 @@ const CoWordNetwork = ({ data }) => {
     }, [data]);
 
     return (
-        <div className="network-container">
+        <div className="network-container" style={{ height: '800px' }}>
             <div ref={networkRef} className="network-canvas" />
         </div>
     );

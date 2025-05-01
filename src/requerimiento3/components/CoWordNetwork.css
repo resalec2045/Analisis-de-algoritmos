@@ -2,7 +2,22 @@
 
 .network-container {
     width: 100%;
-    height: 600px;
+    height: 400px;
+}
+
+.network-canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.network-container {
+    width: 100%;
+    height: 800px;
+    /* Aumenta la altura aquí */
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .network-canvas {

@@ -4,6 +4,7 @@ import WordCloudChart from './components/WordCloudChart';
 import CoWordNetwork from './components/CoWordNetwork';
 
 import './styles.css';
+import WordCloudChartPorCategoria from './components/WordCloudChartCategoria';
 // const testWords = [
 //     { text: "Programming", value: 50 },
 //     { text: "Algorithm", value: 30 },
@@ -42,8 +43,10 @@ const Requerimiento3 = () => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [isLoading2, setIsLoading2] = useState(true);
+    const [isLoading3, setIsLoading3] = useState(true);
     const [data, setData] = useState();
     const [data2, setData2] = useState();
+    const [data3, setData3] = useState();
 
     useEffect(() => {
 
@@ -64,6 +67,28 @@ const Requerimiento3 = () => {
                 setData(data.respuesta);
 
                 setIsLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error obteniendo los datos:", error);
+            });
+
+        fetch("http://localhost:8080/api/requerimiento3PorCategoria", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then((data) => {
+
+                setData3(data.respuesta);
+
+                setIsLoading3(false);
             })
             .catch((error) => {
                 console.error("Error obteniendo los datos:", error);
@@ -97,21 +122,6 @@ const Requerimiento3 = () => {
         <div className="d-flex">
             <Sidebar />
             <div className="p-4 flex-grow-1">
-                <div className="page-section">
-                    <h5>Word Cloud</h5>
-
-                    {isLoading ? (
-                        <div className="text-center">
-                            <div className="spinner-border text-primary" role="status">
-                                <span className="visually-hidden">Loading...</span>
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="">
-                            <WordCloudChart words={data} />
-                        </div>
-                    )}
-                </div>
 
                 <div className="page-section">
                     <h5>Co-Word Network</h5>
@@ -128,6 +138,47 @@ const Requerimiento3 = () => {
                         </div>
                     )}
                 </div>
+
+
+                <div className="page-section">
+                    <h5>Word Cloud global</h5>
+
+                    {isLoading ? (
+                        <div className="text-center">
+                            <div className="spinner-border text-primary" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="">
+                            <WordCloudChart words={data} />
+                        </div>
+                    )}
+                </div>
+
+                <div className="page-section">
+                    <h5 className="text-center mb-4">Word Cloud por categoría</h5>
+
+                    {isLoading3 ? (
+                        <div className="text-center">
+                            <div className="spinner-border text-primary" role="status">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="wordcloud-container">
+                            {data3 && Object.entries(data3).map(([categoria, words]) => (
+                                <div className="page-section">
+                                    <div key={categoria} className="mb-5">
+                                        <h6 className="text-white text-center mb-2">{categoria}</h6>
+                                        <WordCloudChart words={words} />
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
 
             </div>
         </div>
