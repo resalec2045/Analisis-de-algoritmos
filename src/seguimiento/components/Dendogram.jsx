@@ -6,7 +6,7 @@ const Dendrogram = ({ data }) => {
     const containerStyles = {
         width: '100%',
         height: '100vh',
-        backgroundColor: '#121212', // Fondo oscuro
+        backgroundColor: '#ffffff', // Fondo oscuro
     };
 
     // Función para asignar clases a los enlaces
