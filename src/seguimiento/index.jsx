@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from '../Components/Sidebar';
 import Dendrogram from './components/Dendogram';
 import ComparacionClustering from "./components/Table";
+import { getEnvVariables } from "../helpers/getEnv";
 
 const Seguimiento = () => {
 
@@ -13,11 +14,13 @@ const Seguimiento = () => {
     const [data, setData] = useState();
     const [data2, setData2] = useState();
 
+    const { VITE_API_URL } = getEnvVariables();
+
     useEffect(() => {
 
         setIsLoading(true);
 
-        fetch("http://localhost:8080/api/preprocesamientoDescriptionUtiliced", {
+        fetch(`${VITE_API_URL}/preprocesamientoDescriptionUtiliced`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
