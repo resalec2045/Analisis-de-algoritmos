@@ -5,6 +5,7 @@ import CoWordNetwork from './components/CoWordNetwork';
 
 import './styles.css';
 import WordCloudChartPorCategoria from './components/WordCloudChartCategoria';
+import { getEnvVariables } from '../helpers/getEnv';
 // const testWords = [
 //     { text: "Programming", value: 50 },
 //     { text: "Algorithm", value: 30 },
@@ -48,9 +49,11 @@ const Requerimiento3 = () => {
     const [data2, setData2] = useState();
     const [data3, setData3] = useState();
 
+    const { VITE_API_URL } = getEnvVariables();
+
     useEffect(() => {
 
-        fetch("http://localhost:8080/api/requerimiento3", {
+        fetch(`${VITE_API_URL}/requerimiento3`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -72,7 +75,7 @@ const Requerimiento3 = () => {
                 console.error("Error obteniendo los datos:", error);
             });
 
-        fetch("http://localhost:8080/api/requerimiento3PorCategoria", {
+        fetch(`${VITE_API_URL}/requerimiento3PorCategoria`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -94,7 +97,7 @@ const Requerimiento3 = () => {
                 console.error("Error obteniendo los datos:", error);
             });
 
-        fetch("http://localhost:8080/api/requerimiento3_2", {
+        fetch(`${VITE_API_URL}/requerimiento3_2`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

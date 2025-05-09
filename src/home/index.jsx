@@ -1,38 +1,5 @@
 import React from "react";
 import Sidebar from "../Components/Sidebar";
-// import Chart from "react-apexcharts"; // ✅ Usa el wrapper correcto
-
-// const options = {
-//     chart: {
-//         height: 350,
-//         type: 'line',
-//         zoom: { enabled: false }
-//     },
-//     colors: ['#FF0000'],
-//     dataLabels: { enabled: false },
-//     stroke: { curve: 'stepline' },
-//     title: {
-//         text: 'Variación de Sueño por Hora',
-//         align: 'left'
-//     },
-//     grid: {
-//         row: {
-//             colors: ['#f3f3f3', 'transparent'],
-//             opacity: 0.5
-//         },
-//     },
-//     xaxis: {
-//         categories: ['06:00', '08:00', '10:00', '12:00']
-//     },
-//     yaxis: {
-//         min: 0 // 🔽 El eje Y comenzará en 0
-//     }
-// };
-
-// const series = [{
-//     name: "Sueño",
-//     data: [50, 71, 30, 91]
-// }];
 
 const Home = () => {
     return (
@@ -51,7 +18,29 @@ const Home = () => {
         <div className="d-flex">
             <Sidebar />
             <div className="p-4 flex-grow-1">
-
+                <section className="w-full px-6 py-12 dark:bg-gray-900">
+                    <div className="max-w-5xl mx-auto">
+                        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">
+                            📊 Análisis Bibliométrico del Pensamiento Computacional
+                        </h1>
+                        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            Bienvenido a nuestra herramienta interactiva desarrollada en el marco del curso de Análisis de Algoritmos.
+                            Esta aplicación te permite explorar y analizar la producción científica sobre <strong>pensamiento computacional </strong>
+                            mediante visualizaciones dinámicas, agrupación por similitud textual y técnicas bibliométricas avanzadas.
+                        </p>
+                        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
+                            Con datos extraídos de bases como ACM, SAGE y ScienceDirect, puedes:
+                        </p>
+                        <ul className="text-left text-gray-600 dark:text-gray-300 list-disc list-inside mb-6">
+                            <li>Visualizar redes de co-ocurrencia de palabras clave.</li>
+                            <li>Visualizar estadísticas por autor, journal, publisher y tipo de producto.</li>
+                            <li>Agrupar publicaciones por similitud entre abstracts.</li>
+                        </ul>
+                        <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+                            Todo esto desde una plataforma accesible, confiable y respaldada por técnicas de análisis computacional y estadístico.
+                        </p>
+                    </div>
+                </section>
             </div>
         </div>
     );

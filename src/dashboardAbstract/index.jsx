@@ -2,18 +2,20 @@ import React, { useEffect, useState } from "react";
 import KeywordStatsTable from "./components/KeywordStatsTable";
 import BarChart from "../dashboard/components/BarChart";
 import Sidebar from "../Components/Sidebar";
+import { getEnvVariables } from "../helpers/getEnv";
 
 const DashboardAbstract = () => {
   // const [chartData, setChartData] = useState({ metodo: [], time: [] });
   const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
 
+  const { VITE_API_URL } = getEnvVariables();
+
   useEffect(() => {
 
     setIsLoading(true);
 
-    // ! Cambiar url a api
-    fetch("http://localhost:8080/api/getInformationAbstract", {
+    fetch(`${VITE_API_URL}/getInformationAbstract`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

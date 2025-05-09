@@ -44,7 +44,7 @@ const Seguimiento = () => {
                 console.error("Error obteniendo los datos:", error);
             });
 
-        fetch("http://localhost:8080/api/preprocesamientoTextoAgnes", {
+        fetch(`${VITE_API_URL}/preprocesamientoTextoAgnes`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -67,7 +67,7 @@ const Seguimiento = () => {
                 console.error("Error obteniendo los datos:", error);
             });
 
-        fetch("http://localhost:8080/api/preprocesamientoTextoDiana", {
+        fetch(`${VITE_API_URL}/preprocesamientoTextoDiana`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

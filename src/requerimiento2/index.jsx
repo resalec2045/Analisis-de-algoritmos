@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import Sidebar from '../Components/Sidebar';
 import BarChart from './components/BarChart';
+import { getEnvVariables } from '../helpers/getEnv';
 
 const Requerimiento2 = () => {
 
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState();
 
+    const { VITE_API_URL } = getEnvVariables();
+
     useEffect(() => {
 
         setIsLoading(true);
 
-        fetch("http://localhost:8080/api/requerimiento2", {
+        fetch(`${VITE_API_URL}/requerimiento2`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
