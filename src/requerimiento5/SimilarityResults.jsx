@@ -10,27 +10,31 @@ const SimilarityResults = ({ isLoading, data }) => {
                     </div>
                 </div>
             ) : (
-                <div className="space-y-10">
-                    {Object.entries(data).map(([methodName, methodData]) => (
-                        <div key={methodName}>
-                            <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
-                                Resultados por método: {methodName}
-                            </h1>
-                            {methodData?.Texto?.map((abstractGroup, groupIndex) => (
-                                <div
-                                    key={groupIndex}
-                                    className="space-y-4 border border-gray-300 rounded-md p-4 shadow mb-6"
-                                >
-                                    <h2 className="text-lg font-semibold text-blue-700">
-                                        Texto {groupIndex + 1}
-                                    </h2>
-                                    {abstractGroup.map((abstract, idx) => (
-                                        <p key={idx} className="text-justify text-sm text-gray-700 leading-relaxed">
-                                            {abstract}
-                                        </p>
-                                    ))}
-                                </div>
-                            ))}
+                <div className="space-y-6">
+                    <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
+                        Resultados de Comparaciones
+                    </h1>
+                    {data?.comparaciones?.map((item, index) => (
+                        <div
+                            key={index}
+                            className="border border-gray-300 rounded-md p-4 shadow-md"
+                        >
+                            <h2 className="text-lg font-semibold text-blue-700 mb-2">
+                                Comparación {index + 1}
+                            </h2>
+                            <div className="mb-2">
+                                <p className="text-sm text-gray-700">
+                                    <strong>Comparación 1:</strong> {item["Comparación 1"]}
+                                </p>
+                                <p className="text-sm text-gray-700">
+                                    <strong>Comparación 2:</strong> {item["Comparación 2"]}
+                                </p>
+                            </div>
+                            <div className="flex gap-4 text-sm text-gray-600 mt-2">
+                                <span><strong>Jaccard:</strong> {item.Jaccard.toFixed(2)}%</span>
+                                <br />
+                                <span><strong>TFIDF:</strong> {item.TFIDF.toFixed(2)}%</span>
+                            </div>
                         </div>
                     ))}
                 </div>
